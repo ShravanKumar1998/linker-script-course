@@ -27,7 +27,8 @@ $(READELF_OUT): $(TARGET).elf
 	$(READELF) -a $^ > $@
 
 # output file
-main.elf: $(OBJ) $(LD_SCRIPT)
+$(TARGET).elf: $(OBJ) $(LD_SCRIPT)
+	$(info obj = $(OBJ))
 	$(LD) -s -Bsymbolic -gc-sections -T$(LD_SCRIPT) -static -Map=$(LD_MAP) -o $@ $(OBJ)
 
 %.o: %.c
