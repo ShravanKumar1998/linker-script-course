@@ -3,4 +3,4 @@
 *.txt
 *.map
 *.log
-main.ld
+Makefile
